@@ -1,0 +1,140 @@
+.register-mock {
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top left, #edf2ff 0%, #dbe5ff 55%, #f4f8ff 100%);
+  color: #1f2a44;
+}
+
+.register-mock-card {
+  width: min(480px, 100%);
+  background-color: #ffffff;
+  border: 1px solid #d8e2f3;
+  border-radius: 16px;
+  box-shadow: 0 20px 36px rgba(39, 67, 115, 0.16);
+  padding: 2rem;
+}
+
+.register-mock-header h1 {
+  margin: 0;
+  font-size: 1.85rem;
+  color: #173465;
+}
+
+.register-mock-header p {
+  margin-top: 0.35rem;
+  margin-bottom: 1.25rem;
+  color: #4a5c7e;
+  font-size: 0.95rem;
+}
+
+.register-mock-form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-row label {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #32456e;
+}
+
+.form-row input {
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid #b6c4dc;
+  padding: 0 0.95rem;
+  color: #456086;
+  background: #f6f9ff;
+}
+
+.form-row input:disabled {
+  color: #7a89a3;
+  cursor: not-allowed;
+}
+
+.role-row {
+  margin-top: 0.4rem;
+}
+
+.role-options {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.role-option {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 8px;
+  background: #f1f5ff;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.9rem;
+  border: 1px solid #c8d4ed;
+  color: #2f4f84;
+}
+
+.role-option input {
+  accent-color: #3765c5;
+}
+
+.btn-register {
+  margin-top: 0.7rem;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(120deg, #4f75d6, #2b52b9);
+}
+
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+  font-size: 0.92rem;
+  color: #5c6d8c;
+}
+
+.toggle-link {
+  border: none;
+  background: transparent;
+  color: #2b52b9;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.toggle-link:hover {
+  color: #1a3a7c;
+}
+
+.register-mock-footer {
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  color: #667596;
+  text-align: center;
+}
+
+@media (max-width: 540px) {
+  .register-mock-card {
+    padding: 1.3rem;
+  }
+
+  .register-mock-header h1 {
+    font-size: 1.5rem;
+  }
+}

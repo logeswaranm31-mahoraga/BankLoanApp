@@ -1,0 +1,45 @@
+<div class="application-list-page">
+  <div class="page-heading">
+    <span class="eyebrow">Loan application</span>
+    <h1>Application details</h1>
+    <p class="page-copy">Review the application record below.</p>
+  </div>
+
+  @for(application of applicationList(); track $index){
+  <section class="application-card">
+        <div class="card-header">
+          <div>
+            <p class="card-label">Applicant ID</p>
+            <p class="card-value">{{application.applicantID}}</p>
+          </div>
+          <span class="status-pill status-{{application.applicationStatus.toLowerCase()}}">{{application.applicationStatus}}</span>
+        </div>
+    
+        <div class="application-fields">
+          <div class="field">
+            <p class="field-label">Date Applied</p>
+            <p class="field-value">{{application.dateApplied | date}}</p>
+          </div>
+          <div class="field">
+            <p class="field-label">Employment Status</p>
+            <p class="field-value">{{application.employmentStatus}}</p>
+          </div>
+          <div class="field">
+            <p class="field-label">Assigned Bank Employee</p>
+            <p class="field-value">{{application.assignedToBankEmployee}}</p>
+          </div>
+          <div class="field">
+            <p class="field-label">PAN Card</p>
+            <p class="field-value">{{application.panCard}}</p>
+          </div>
+        </div>
+
+    </section>
+} @empty {
+  <section class="no-applications">
+    <div class="no-apps-icon">📋</div>
+    <h3>No Applications Found</h3>
+    <p>You haven't submitted any loan applications yet. Start your journey by creating a new application.</p>
+  </section>
+}
+</div>

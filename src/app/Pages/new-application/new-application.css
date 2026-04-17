@@ -1,0 +1,105 @@
+.page-shell {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.form-card {
+  background: #ffffff;
+  border: 1px solid rgba(30, 60, 114, 0.08);
+  border-radius: var(--border-radius);
+  box-shadow: 0 16px 40px rgba(30, 60, 114, 0.08);
+  padding: 2rem;
+}
+
+.form-header {
+  margin-bottom: 1.5rem;
+}
+
+.form-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.section-block {
+  margin-top: 1.5rem;
+  padding: 1rem 0 0;
+  border-top: 1px solid rgba(30, 60, 114, 0.12);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.btn-add-loan {
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(120deg, #28a745, #20c997);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-add-loan:hover {
+  background: linear-gradient(120deg, #218838, #1aa085);
+}
+
+.loan-group {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  align-items: end;
+}
+
+.loan-actions {
+  display: flex;
+  align-items: flex-end;
+}
+
+.btn-delete {
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  background: #dc3545;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-delete:hover {
+  background: #c82333;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(30, 60, 114, 0.12);
+}
+
+@media (max-width: 700px) {
+  .loan-group,
+  .form-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

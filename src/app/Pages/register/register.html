@@ -1,0 +1,78 @@
+<section class="register-mock">
+  <div class="register-mock-card">
+    <div class="register-mock-header">
+@if(!isLoginFormVisible()){
+      <h1>Create account</h1>
+      <p>Register to access loan tracking, applications, and dashboard.</p>
+    }@else {
+      <h1>Welcome back</h1>
+      <p>Login to manage your account and loan applications.</p>
+    }
+    </div>
+@if(!isLoginFormVisible()){
+    <form class="register-mock-form">
+      <div class="form-row">
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username" [(ngModel)]="newAppForm.userName" placeholder="Username" />
+      </div>
+
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="emailId" [(ngModel)]="newAppForm.emailId"  placeholder="Email address" />
+      </div>
+
+      <div class="form-row">
+        <label for="fullname">Full name</label>
+        <input id="fullname" type="text" name="fullName" [(ngModel)]="newAppForm.fullName"  placeholder="Full name" />
+      </div>
+
+      <div class="form-row">
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" [(ngModel)]="newAppForm.password"  placeholder="Password" />
+      </div>
+
+      <div class="form-row">
+        <label for="cpassword">Confirm Password</label>
+        <input id="cpassword" type="password" name="confirmPassword" [(ngModel)]="newAppForm.confirmPassword"  placeholder="Password" />
+      </div>
+
+      <div class="form-row role-row">
+        <label>Account type</label>
+        <div class="role-options">
+          <label class="role-option">
+            <input type="radio" name="accountType" [(ngModel)]="accountType" value="banker"/>
+           <span> I’m a Banker </span>
+          </label>
+          <label class="role-option">
+            <input type="radio" name="accountType" [(ngModel)]="accountType" value="customer"/>
+            <span> I’m a Customer </span> 
+          </label>
+        </div>
+      </div>
+
+      <button type="button" class="btn-register" (click)="registerUser()">Register</button>
+      <div class="form-footer">
+        <span>Already have an account?</span>
+        <button type="button" class="toggle-link" (click)="isLoginFormVisible.set(false)">Login</button>
+      </div>
+    </form>
+  }@else {
+    <form class="register-mock-form">
+     <div class="form-row">
+       <label for="username">Username</label>
+       <input id="username" type="text" name="username" [(ngModel)]="login.userName" placeholder="Username" />
+     </div>
+
+     <div class="form-row">
+       <label for="password">Password</label>
+       <input id="password" type="password" name="password" [(ngModel)]="login.password"  placeholder="Password" />
+     </div>
+     <button type="button" class="btn-register" (click)="onLogin()">Login</button>
+     <div class="form-footer">
+        <span>Don't have an account?</span>
+        <button type="button" class="toggle-link" (click)="isLoginFormVisible.set(true)">Register</button>
+     </div>
+   </form>
+  }
+  </div>
+</section>

@@ -1,0 +1,118 @@
+<div class="page-shell">
+  <section class="form-card">
+    <header class="form-header">
+      <h1>Add New Application</h1>
+      <p>Fill in applicant details and loan information for a new application record.</p>
+    </header>
+
+    <form class="form-grid" [formGroup]="newApplication" autocomplete="off">
+
+      <div class="field-full">
+        <label for="fullName">Full Name</label>
+        <input id="fullName" formControlName="fullName" name="fullName" type="text" placeholder="John Doe" />
+      </div>
+
+      <div class="field-half">
+        <label for="panCard">PAN Card</label>
+        <input id="panCard" formControlName="panCard" name="panCard" type="text" placeholder="ABCDE1234F" />
+      </div>
+
+      <div class="field-half">
+        <label for="dateOfBirth">Date of Birth</label>
+        <input id="dateOfBirth" formControlName="dateOfBirth" name="dateOfBirth" type="date" />
+      </div>
+
+      <div class="field-half">
+        <label for="email">Email</label>
+        <input id="email" formControlName="email" name="email" type="email" placeholder="email@example.com" />
+      </div>
+
+      <div class="field-half">
+        <label for="phone">Phone</label>
+        <input id="phone" formControlName="phone" name="phone" type="tel" placeholder="123-456-7890" />
+      </div>
+
+      <div class="field-half">
+        <label for="city">City</label>
+        <input id="city" formControlName="city" name="city" type="text" placeholder="Mumbai" />
+      </div>
+
+      <div class="field-half">
+        <label for="state">State</label>
+        <input id="state" formControlName="state" name="state" type="text" placeholder="Maharashtra" />
+      </div>
+
+      <div class="field-half">
+        <label for="zipCode">Zip Code</label>
+        <input id="zipCode" formControlName="zipCode" name="zipCode" type="text" placeholder="400001" />
+      </div>
+
+      <div class="field-half">
+        <label for="annualIncome">Annual Income</label>
+        <input id="annualIncome" formControlName="annualIncome" name="annualIncome" type="number" placeholder="0" />
+      </div>
+
+      <div class="field-half">
+        <label for="employmentStatus">Employment Status</label>
+        <input id="employmentStatus" formControlName="employmentStatus" name="employmentStatus" type="text" placeholder="Employed" />
+      </div>
+
+      <div class="field-half">
+        <label for="creditScore">Credit Score</label>
+        <input id="creditScore" formControlName="creditScore" name="creditScore" type="number" placeholder="0" />
+      </div>
+
+      <div class="field-full">
+        <label for="address">Address</label>
+        <textarea id="address" formControlName="address" name="address" rows="3" placeholder="123 Main Street"></textarea>
+      </div>
+
+      <div class="field-full">
+        <label for="assets">Assets</label>
+        <input id="assets" formControlName="assets" name="assets" type="text" placeholder="House, Car, Investments" />
+      </div>
+
+      <div class="field-full">
+        <label for="dateApplied">Date Applied</label>
+        <input id="dateApplied" formControlName="dateApplied" name="dateApplied" type="date" />
+      </div>
+
+      <section class="section-block">
+        <div class="section-header">
+          <div class="section-title">Loan Details</div>
+          <button type="button" class="btn-add-loan" (click)="addLoanForm()">+ Add Loan</button>
+        </div>
+        <div formArrayName="loans">
+            @for (item of loans.controls; track $index; let index=$index) {
+                <div class="loan-group" [formGroupName]="index">
+        
+                  <div class="field-third">
+                    <label for="bankName">Bank Name</label>
+                    <input id="bankName" formControlName="bankName" name="bankName" type="text" placeholder="Bank of India" />
+                  </div>
+        
+                  <div class="field-third">
+                    <label for="loanAmount">Loan Amount</label>
+                    <input id="loanAmount" formControlName="loanAmount" name="loanAmount" type="number" placeholder="0" />
+                  </div>
+        
+                  <div class="field-half">
+                    <label for="emi">EMI</label>
+                    <input id="emi" formControlName="emi" name="emi" type="number" placeholder="0" />
+                  </div>
+
+                  <div class="loan-actions">
+                    <button type="button" class="btn-delete" (click)="removeLoan(index)">Delete Loan</button>
+                  </div>
+                </div>
+            }
+        </div>
+      </section>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary" (click)="submitForm()">Submit Application</button>
+        <button type="reset" class="btn-secondary" (click)="resetForm()">Reset Form</button>
+      </div>
+    </form>
+  </section>
+</div>
